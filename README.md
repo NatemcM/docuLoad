@@ -3,33 +3,34 @@ DocuLoad is a simple jQuery plugin to help bring web loading to websites, websit
 
 ## Setup 
 
-Add 'loading' class to your document body, this class will be removed on page load, and added when the defined element is click/ touched
+Add `.loading` class to your document body, this class will be removed on page load, and added when the element is click/ touched
 
 ## Usage 
 
-Set all anchor elements to trigger the loading screen, give the loading animation 240ms to appear on screen and only remove the loading screen once the whole document has loaded $(window).load() (please note that $(window).load() can be extremely slow!! as it waits for all scripts and images to load before firing. YOu can set this to FALSE to use $(document).ready() which fires much earlier on, reducing the loading screen time but my result in a partially loaded page. Use best practices here to speed up your websites!! Just because you have a fancy loading screen doesn't mean you can make people wait half an hour to see your content!).
+*(Below is an example usage)*
+
+Set all anchor elements to trigger the loading screen, give the loading animation 240ms to appear on screen and only remove the loading screen once the whole document has loaded `$(window).load()` (please note that `$(window).load()` can be extremely slow!! as it waits for all scripts and images to load before firing. You can set this to `FALSE` to use `$(document).ready()` which fires much earlier on, reducing the loading screen time but may result in a partially loaded page. Use best practices here to speed up your websites!! Just because you have a fancy loading screen doesn't mean you can make people wait half an hour to see your content!).
 
 
 ```HTML 
+    <script src="path/to/jquery"></script>
     <script src="path/to/docuLoad.js" defer></script>
 ```
 
 ```javascript
-    $('a').docuLoad({
-        bodyLoadClass: 'loading',
-        timeOut: 240,
-        windowLoad: true
-    });
+    <script>
+        $('a').docuLoad({
+            bodyLoadClass: 'loading',
+            timeOut: 240,
+            windowLoad: true
+        });
+    </script>
  ```
 
 Set some CSS
 
  ```CSS
-     body.loading {
-        overflow: hidden; //prevent scrolling 
-    }
-
-    .loading-screen {
+     .loading-screen {
         position: fixed;
         width: 100%;
         height: 100vh;
