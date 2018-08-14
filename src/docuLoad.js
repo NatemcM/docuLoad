@@ -17,22 +17,22 @@
  *  Author: Nathanael McMillan (Inside Creative)
  * ver: 0.0.3
  * 
-*/
+ */
 
 
 ;(function ($) {
     'use strict';
-    $.fn.docuLoad = function ( options ) {
+    $.fn.docuLoad = function (options) {
 
-         var settings = $.extend({
-             bodyLoadClass:'loading',
-             timeOut: 240, 
-             windowLoad: true
-         }, options);
+        var settings = $.extend({
+            bodyLoadClass: 'loading',
+            timeOut: 240,
+            windowLoad: true
+        }, options);
 
-         // When the element is clicked or touchstarted
-         this.on("click touchstart", function(e) {
-            
+        // When the element is clicked or touchstarted
+        this.on("click touchstart", function (e) {
+
             // Find the href location 
             var loc = $(this).attr('href');
             // Exclude any HASH in URL as this is not designed for a reload
@@ -40,7 +40,7 @@
 
             // If the link URL contains a HASH, is null/ >0 then return to 
             // exit out of the script
-            if (loc.indexOf(exclude) >= 0 || loc.length == 0 || loc == null) {
+            if (loc.indexOf(exclude) >= 0 || loc.length === 0 || loc === null) {
                 return;
             } else {
                 // prevent the link from auto redirecting to the URI
@@ -59,24 +59,24 @@
                     // Send the browser to the original location
                     return window.location.href = loc;
                 }, settings.timeOut);
-            }            
-         });
- 
-         // Remove loading class when page has fully loaded 
-         // Be aware that this will wait for all images 
-         // and JS to load before firing and can take 
-         // a long time! So you may want to set settings.windowLoad
-         // to false to trigger on document ready for a speedier 
-         // response.
-         if (settings.windowLoad) {
+            }
+        });
+
+        // Remove loading class when page has fully loaded 
+        // Be aware that this will wait for all images 
+        // and JS to load before firing and can take 
+        // a long time! So you may want to set settings.windowLoad
+        // to false to trigger on document ready for a speedier 
+        // response.
+        if (settings.windowLoad) {
             $(window).load(function () {
                 $('body').removeClass(settings.bodyLoadClass);
             });
-         } else {
-             $(document).ready(function () {
-                 $('body').removeClass(settings.bodyLoadClass);
+        } else {
+            $(document).ready(function () {
+                $('body').removeClass(settings.bodyLoadClass);
             });
-         }
-         
+        }
+
     };
 }(jQuery));
