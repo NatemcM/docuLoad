@@ -1,0 +1,23 @@
+.main-header {
+  padding: 150px 0;
+  background-image: url(../img/cute-cupcakes.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+
+  h1 {
+    color: white;
+
+    .cursive {
+      font-size: 10rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.nav-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+}

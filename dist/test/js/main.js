@@ -1,0 +1,1 @@
+var openNav=sessionStorage.getItem("openNavMenu");1==openNav&&$(".instructions").removeClass("hidden"),$(".close-nav").on("click",function(e){e.preventDefault(),$(".instructions").addClass("hidden"),sessionStorage.setItem("openNavMenu",0)}),$(".nav-btn").on("click",function(e){e.preventDefault(),$(".instructions").removeClass("hidden"),sessionStorage.setItem("openNavMenu",1)});

@@ -1,0 +1,24 @@
+.instructions {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100vh;
+    background: #383734;
+    padding: 18px;
+    color: white;
+    transform: translateX(0);
+    transition: all ease 0.45s;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 105;
+
+    &.hidden {
+      transform: translateX(102%);
+    }
+
+    .bonus {
+      margin-top: 4rem;
+      border-top: 1px solid #e9e9e8;
+    }
+}

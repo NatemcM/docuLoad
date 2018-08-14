@@ -1,0 +1,21 @@
+// Give me some space man!
+
+$space-list: 10 20 30 40 50 60 70 80 90 100 150 200 250 300 400 500;
+
+@each $space in $space-list {
+    .margin-bottom-#{$space} {
+        margin-bottom: #{$space}px;
+    }
+
+    .margin-top-#{$space} {
+        margin-top: #{$space}px;
+    }
+
+    .padding-bottom-#{$space} {
+        padding-bottom: #{$space}px;
+    }
+
+    .padding-top-#{$space} {
+        padding-top: #{$space}px;
+    }
+}
