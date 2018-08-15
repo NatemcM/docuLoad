@@ -41,13 +41,11 @@ Set some CSS
         bottom: 0;
         z-index: -9998;
         visibility: hidden;
-        transform: translateY(5%);
         transition: all ease 1.2s;
         opacity: 0;
     }
 
     .loading .loading-screen {
-        transform: translateX(0%);
         z-index: 9998;
         visibility: visible;
         opacity: 1;
